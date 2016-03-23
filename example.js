@@ -7,7 +7,7 @@ var ir = require('infix-rationals');
 var x = rationals(0), y = 0;
 
 for (var i = 0; i < 10; ++i) {
-	x = ir.memCompile("x + 0.1")(x);
+	x = ir.memCompile("$0 + 0.1")(x);
 	y = y + 0.1;
 }
 
