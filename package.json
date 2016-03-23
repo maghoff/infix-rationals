@@ -1,6 +1,6 @@
 {
   "name": "infix-rationals",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Infix support for rationals",
   "author": "Magnus Hoff <maghoff@gmail.com>",
   "license": "MIT",
