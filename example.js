@@ -1,19 +1,20 @@
 var assert = require('assert');
+var infix = require('infix');
 var rationals = require('rationals');
-var infixRationals = require('infix-rationals');
+var ir = require('infix-rationals');
 
 
-var addOneTenth = infixRationals.compile("$0 + 1/10");
-
-var x = rationals(0);
+var x = rationals(0), y = 0;
 
 for (var i = 0; i < 10; ++i) {
-	x = addOneTenth(x);
+	x = ir.memCompile("x + 0.1")(x);
+	y = y + 0.1;
 }
 
 assert(x === rationals(1));
+assert(y !== 1);
 
 
 // Rewritten example from rationals:
 
-assert(infixRationals.evaluate("(1/2 + 1/3 - 1/4) * 1/5/(1/6)") === rationals(49, 70));
+assert(ir.evaluate("(1/2 + 1/3 - 1/4) * 1/5/(1/6)") === rationals(49, 70));
